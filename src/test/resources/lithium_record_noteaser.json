@@ -1,0 +1,80 @@
+
+{
+	"orig": {
+		"type": "message",
+		"id": "10000",
+		"href": "/messages/10000",
+		"author": {
+			"type": "user",
+			"id": "231",
+			"href": "/users/231"
+		},
+		"subject": "subject",
+		"search_snippet": "test",
+		"body": "test",
+		"teaser": "",
+		"board": {
+			"type": "board",
+			"id": "DevBoard",
+			"href": "/boards/DevBoard"
+		},
+		"conversation": {
+			"type": "conversation",
+			"id": "10000",
+			"style": "forum",
+			"thread_style": "forum",
+			"messages_count": 1,
+			"solved": false
+		},
+		"topic": {
+			"type": "message",
+			"id": "10000",
+			"href": "/messages/10000"
+		},
+		"depth": 0,
+		"read_only": false,
+		"language": "EN",
+		"can_accept_solution": false,
+		"placeholder": false,
+		"is_solution": false,
+		"solution_data": {
+			
+		},
+		"metrics": {
+			"type": "message_metrics",
+			"views": 0
+		},
+		"current_revision": {
+			"type": "revision",
+			"last_edit_author": {
+				"type": "user",
+				"id": "231",
+				"href": "/users/231"
+			}
+		},
+		"moderation_status": "approved",
+		"user_context": {
+			"type": "user_context",
+			"kudo": false,
+			"me_too": false,
+			"read": false,
+			"can_reply": true,
+			"can_kudo": true,
+			"can_delete": true
+		},
+		"popularity": -3772.030895
+	},
+	"tags": [],
+	"labels": [
+		{
+			"type": "label",
+			"id": "71",
+			"href": "/labels/71",
+			"text": "test",
+			"messages": {
+				"query": "SELECT * FROM messages WHERE labels.text = 'Cloudera Manager'"
+			}
+		}
+	],
+	"images": []
+}
