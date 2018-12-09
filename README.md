@@ -4,41 +4,42 @@ The following [Morhline](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-ref
 
 ##containsRegex
 
+Similar to the original [contains](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html#contains) but also regexp is allowed. 
 example: 
 ```
+{
+   if {
+      conditions : [
+        { containsRegex { "id" : ".*2$" } }
+      ]
+      then : [
+     {
+       addValues {
+        contains : "true"
+     }
+     }
+     ] 
+     else : [
        {
-        if {
-          conditions : [
-            { containsRegex { "id" : ".*2$" } }
-          ]
-          then : [
-			{
-				addValues {
-					contains : "true"
-				}
-			}
-          ] 
-          else : [
-			{
-				addValues {
-					contains : "false"
-				}
-			}
-          ]
-         }
+         addValues {
+         contains : "false"
        }
+       }
+     ]
+     }
+}
 ```
 
 ##conditionalDrop
 
 Drops the current record if all the listed properties matches the provided regexp. As a property may have a list of values, if any of the list members matches, the property matches.
 ```
-	   {
-		conditionalDrop {
-			boardId : "customer-tkb"
-			depth: "(?!(0)).*"
-		}
-		}
+    {
+  conditionalDrop {
+   boardId : "customer-tkb"
+   depth: "(?!(0)).*"
+  }
+  }
 ```
 
 ##extractJsonPathsFromField
@@ -65,15 +66,14 @@ Copied from the original [extractJsonPaths](http://kitesdk.org/docs/1.1.0/morphl
 ## htmlProcessor
 Css selector for HTML files: Grabs the xml element content. ';' is optional. After ';' attribute name is xml expected.
 ```
-		{
-		htmlProcessor {
-			_source: source
-			content_facets : "meta[name=facet];content"
-			title : "title"
-		}
-		}
+  {
+  htmlProcessor {
+   _source: source
+   content_facets : "meta[name=facet];content"
+   title : "title"
+  }
+  }
 ```
-
 
 ##dispatchingLoadSolr
 Inserts the record into a predefined collection. The collection name to insert the current record to is given at the "targetCollection" for every record. 
@@ -81,12 +81,12 @@ Inserts the record into a predefined collection. The collection name to insert t
 ```
 {
         dispatchingLoadSolr {
-			solrLocator : {
-  			# Name of solr collection. Nothing will be inserted into this collection. Its schema must be identical to the overrider collection name.
-  			collection : collectionName
-		    zkHost : "$ZK_HOST"
-  	        batchSize : 10000
+   solrLocator : {
+     # Name of solr collection. Nothing will be inserted into this collection. Its schema must be identical to the overrider collection name.
+     collection : collectionName
+      zkHost : "$ZK_HOST"
+           batchSize : 10000
         }
-	    }
-	    }
+     }
+     }
 ```
