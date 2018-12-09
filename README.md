@@ -1,9 +1,8 @@
-# Homegrown Morphline commands
+# Extra Morphline commands
 
 The following [Morhline](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html) commands implemented here: 
 
 ##containsRegex
-
 Similar to the original [contains](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html#contains) but also regexp is allowed. 
 example: 
 ```
@@ -31,7 +30,6 @@ example:
 ```
 
 ##conditionalDrop
-
 Drops the current record if all the listed properties matches the provided regexp. As a property may have a list of values, if any of the list members matches, the property matches.
 ```
     {
