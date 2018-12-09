@@ -30,7 +30,7 @@ example:
 ```
 
 ## conditionalDrop
-Drops the current record if all the listed properties matches the provided regexp. As a property may have a list of values, if any of the list members matches, the property matches.
+Drops the current record if all the listed properties matches the provided regexp. A property may have a list of values in morphlines. If any of those value matches, the property matches.
 ```
     {
   conditionalDrop {
@@ -41,7 +41,7 @@ Drops the current record if all the listed properties matches the provided regex
 ```
 
 ## extractJsonPathsFromField
-Copied from the original [extractJsonPaths](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html#extractJsonPaths), which uses the Fields.ATTACHMENT_BODY to parse the json. You can provide the **sourceStringField** for extractJsonPathsFromField for the input json. Other than that it works exactly the same as the original.
+Copied from the original [extractJsonPaths](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html#extractJsonPaths), which parses the json from the Fields.ATTACHMENT_BODY field. It is possible to provide the **sourceStringField** for extractJsonPathsFromField that contains the json. Other than this the extractJsonPathsFromField works exactly the same as the original extractJsonPaths.
 
 ```
 { 
@@ -62,7 +62,7 @@ Copied from the original [extractJsonPaths](http://kitesdk.org/docs/1.1.0/morphl
 ```
 
 ## htmlProcessor
-Css selector for HTML files: Grabs the xml element content. ';' is optional. After ';' attribute name is xml expected.
+Populate record from HTML strings, that are defined in the _source field, using a CSS selector. By default it grabs the html element content. If the optional ';' is given: after ';' attribute name is xml expected and its attribute value is returned.
 ```
   {
   htmlProcessor {
@@ -74,13 +74,12 @@ Css selector for HTML files: Grabs the xml element content. ';' is optional. Aft
 ```
 
 ## dispatchingLoadSolr
-Inserts the record into a predefined collection. The collection name to insert the current record to is given at the "targetCollection" for every record. 
+Inserts the record into an already existing Solr collection. The collection name to insert the current record to should be  given at the **targetCollection** field for every record. The **collection** field of solr collection must point to a collection whose schema is identical to the target collection. Nothing will be inserted into this latter collection.
 
 ```
 {
         dispatchingLoadSolr {
    solrLocator : {
-     # Name of solr collection. Nothing will be inserted into this collection. Its schema must be identical to the overrider collection name.
      collection : collectionName
       zkHost : "$ZK_HOST"
            batchSize : 10000
