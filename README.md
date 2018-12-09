@@ -74,7 +74,7 @@ Populate record from HTML strings, that are defined in the _source field, using 
 ```
 
 ## dispatchingLoadSolr
-Inserts the record into an already existing Solr collection. The collection name to insert the current record to should be  given at the **targetCollection** field for every record. The **collection** field of solr collection must point to a collection whose schema is identical to the target collection. Nothing will be inserted into this latter collection.
+Inserts the record into an already existing Solr collection. The collection name to insert the current record to should be  given at the **targetCollection** field for every record. The **collection** field of the solrLocator must point to a collection, whose schema is identical to the targetCollection. Nothing will be inserted into this latter collection.
 
 ```
 {
