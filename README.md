@@ -2,7 +2,7 @@
 
 The following [Morhline](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html) commands implemented here: 
 
-##containsRegex
+## containsRegex
 Similar to the original [contains](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html#contains) but also regexp is allowed. 
 example: 
 ```
@@ -29,7 +29,7 @@ example:
 }
 ```
 
-##conditionalDrop
+## conditionalDrop
 Drops the current record if all the listed properties matches the provided regexp. As a property may have a list of values, if any of the list members matches, the property matches.
 ```
     {
@@ -40,7 +40,7 @@ Drops the current record if all the listed properties matches the provided regex
   }
 ```
 
-##extractJsonPathsFromField
+## extractJsonPathsFromField
 Copied from the original [extractJsonPaths](http://kitesdk.org/docs/1.1.0/morphlines/morphlines-reference-guide.html#extractJsonPaths), which uses the Fields.ATTACHMENT_BODY to parse the json. You can provide the **sourceStringField** for extractJsonPathsFromField for the input json. Other than that it works exactly the same as the original.
 
 ```
@@ -73,7 +73,7 @@ Css selector for HTML files: Grabs the xml element content. ';' is optional. Aft
   }
 ```
 
-##dispatchingLoadSolr
+## dispatchingLoadSolr
 Inserts the record into a predefined collection. The collection name to insert the current record to is given at the "targetCollection" for every record. 
 
 ```
